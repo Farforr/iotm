@@ -9,4 +9,6 @@ class Node(models.Model):
 
 class Sensor(models.Model):
 	node = models.ForeignKey(Node)
-	
+
+class Actuator(models.Model):
+	node = models.ForeignKey(Node)
