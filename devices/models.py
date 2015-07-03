@@ -24,4 +24,8 @@ class Actuator(models.Model):
 	node = models.ForeignKey(Node)
 	model = models.ForeignKey(ActuatorType)
 
+class SensorData(models.Model):
+	value = models.IntegerField()
+	sensor = models.ForeignKey(Sensor)
+	
 
