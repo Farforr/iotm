@@ -7,8 +7,16 @@ class Node(models.Model):
 	name = models.CharField(max_length=45)
 	network = models.ForeignKey(Network)
 
+class SensorType(models.Model):
+	name = models.CharField(max_length=45)
+	manufacturer = models.CharField(max_length=45)
+	units = models.CharField(max_length=10)
+
 class Sensor(models.Model):
 	node = models.ForeignKey(Node)
+	model = models.ForeignKey(SensorType)
 
 class Actuator(models.Model):
 	node = models.ForeignKey(Node)
+
+
