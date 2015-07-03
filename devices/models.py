@@ -13,10 +13,15 @@ class SensorType(models.Model):
 	units = models.CharField(max_length=10)
 
 class Sensor(models.Model):
-	node = models.ForeignKey(Node)
+	node  = models.ForeignKey(Node)
 	model = models.ForeignKey(SensorType)
+
+class ActuatorType(models.Model):
+	name = models.CharField(max_length=45)
+	manufacturer = models.CharField(max_length=45)
 
 class Actuator(models.Model):
 	node = models.ForeignKey(Node)
+	model = models.ForeignKey(ActuatorType)
 
 
