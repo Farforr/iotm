@@ -1,0 +1,8 @@
+<h1>Network Info:</h1>
+<h2>{{network}}</h2>
+<h2>Nodes:</h2>
+<ul>
+{% for node in network.node_set.all %}
+    <li><a href="{% url 'devices:node_details' network.name node.name %}">{{ node.name }}</a></li>
+{% endfor %}
+</ul>

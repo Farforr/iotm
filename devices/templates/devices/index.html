@@ -1,0 +1,11 @@
+<h1>My Network Listings:</h1>
+
+{% if network_list %}
+    <ul>
+    {% for network in network_list %}
+        <li><a href="{% url 'devices:network_details' network.name %}">{{ network.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No Networks are available.</p>
+{% endif %}
