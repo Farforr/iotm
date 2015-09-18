@@ -2,7 +2,9 @@
 *.log
 *.pot
 *.pyc
-*.sublime-workspace
 db.sqlite3
 __pycache__/
 local_settings.py
+###Sublime###
+*.sublime-workspace
+*.sublime-project

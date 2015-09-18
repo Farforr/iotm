@@ -1,5 +1,4 @@
-<h1>My Network Listings:</h1>
-
+<h1>My Network Listing:</h1>
 {% if network_list %}
     <ul>
     {% for network in network_list %}
@@ -8,4 +7,20 @@
     </ul>
 {% else %}
     <p>No Networks are available.</p>
+{% endif %}
+
+<p>
+    Add a Network:
+    <form action="{% url 'devices:index' %}" method="post">
+        {% csrf_token %}
+        <label for="network_name">Name: </label>
+        <input type="text" name="new_network_name" id="new_network_name" />
+        <input type="submit" value="Create" />
+    </form>
+</p>
+
+{% if error_message %}
+    <ul>
+        {{ error_message }}
+    </ul>
 {% endif %}
