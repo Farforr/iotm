@@ -19,8 +19,10 @@
     </form>
 </p>
 
-{% if error_message %}
-    <ul>
-        {{ error_message }}
-    </ul>
+{% if error %}
+    {% for message in error.messages %}
+        <ul>
+            {{ message }}
+        </ul>
+    {% endfor %}
 {% endif %}
